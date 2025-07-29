@@ -9,8 +9,9 @@ from django.urls import path
 #     path('create/', MacbookCreateView.as_view(), name='mac-create')
 # ]
 
-from .views import MacbookApiView, MacbookPKApiView
+# from .views import MacbookApiView, MacbookPKApiView
+from .views import ListCreateApi, DetailUpdateDeleteApi
 urlpatterns = [
-    path('', MacbookApiView.as_view(), name='mac-list'),
-    path('detail/<int:pk>/', MacbookPKApiView.as_view(), name='mac-detail')
+    path('', ListCreateApi.as_view(), name='mac-list'),
+    path('detail/<int:pk>/', DetailUpdateDeleteApi.as_view(), name='mac-detail')
 ]
